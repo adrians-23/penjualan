@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Routes Halaman Utama
 Route::get('/', function () {
-    return view('layout.app');
+    return view('home');
 });
 
 // Routes Barang

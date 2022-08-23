@@ -9,7 +9,7 @@
         <div class="card-header">
             <div class="card-title mt-3 mb-3">
                 <button class="btn btn-success btn-sm float-end" data-bs-toggle="modal" data-bs-target="#modalTambahSupplier"><i class="fa fa-plus"></i></button>
-                <h5><i class="fa-solid fa-box-open"></i> Data Supplier</h5>
+                <h5><i class="fa-solid fa-truck"></i> Data Supplier</h5>
             </div>
         </div>
     
