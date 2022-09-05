@@ -14,7 +14,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        //
+        $barang = Barang::all();
+        return view('barang.index', compact('barang'));
     }
 
     /**
@@ -35,7 +36,10 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $barang = Barang::create
+        ($request->all());
+
+        return redirect('barang');
     }
 
     /**
@@ -55,9 +59,10 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Barang $barang)
+    public function edit($id)
     {
-        //
+        $barang = Barang::find($id);
+        return view('barang.form', compact('barang'));
     }
 
     /**
@@ -78,8 +83,11 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Barang $barang)
+    public function destroy($id)
     {
-        //
+        $barang = Barang::find($id);
+        $barang->delete();
+
+        return redirect('barang');
     }
 }

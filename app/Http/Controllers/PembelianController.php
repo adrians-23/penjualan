@@ -14,7 +14,8 @@ class PembelianController extends Controller
      */
     public function index()
     {
-        //
+        $pembelian = Pembelian::all();
+        return view('pembelian.index', compact('pembelian'));
     }
 
     /**
@@ -35,7 +36,10 @@ class PembelianController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pembelian = Pembelian::create
+        ($request->all());
+
+        return redirect('pembelian');
     }
 
     /**
@@ -55,9 +59,10 @@ class PembelianController extends Controller
      * @param  \App\Models\Pembelian  $pembelian
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pembelian $pembelian)
+    public function edit($id)
     {
-        //
+        $pembelian = Pembelian::find($id);
+        return view('pembelian.form', compact('pembelian'));
     }
 
     /**
@@ -78,8 +83,11 @@ class PembelianController extends Controller
      * @param  \App\Models\Pembelian  $pembelian
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pembelian $pembelian)
+    public function destroy($id)
     {
-        //
+        $pembelian = Pembelian::find($id);
+        $pembelian->delete();
+
+        return redirect('pembelian');
     }
 }

@@ -14,7 +14,8 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        //
+        $penjualan = Penjualan::all();
+        return view('penjualan.index', compact('penjualan'));
     }
 
     /**
@@ -35,7 +36,10 @@ class PenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $penjualan = Penjualan::create
+        ($request->all());
+
+        return redirect('penjualan');
     }
 
     /**
@@ -55,9 +59,10 @@ class PenjualanController extends Controller
      * @param  \App\Models\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Penjualan $penjualan)
+    public function edit($id)
     {
-        //
+        $penjualan = Penjualan::find($id);
+        return view('penjualan.form', compact('penjualan'));
     }
 
     /**
@@ -78,8 +83,11 @@ class PenjualanController extends Controller
      * @param  \App\Models\Penjualan  $penjualan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Penjualan $penjualan)
+    public function destroy($id)
     {
-        //
+        $penjualan = Penjualan::find($id);
+        $penjualan->delete();
+
+        return redirect('penjualan');
     }
 }

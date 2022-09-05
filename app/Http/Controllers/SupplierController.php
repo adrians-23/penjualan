@@ -14,7 +14,8 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+        $supplier = Supplier::all();
+        return view('supplier.index', compact('supplier'));
     }
 
     /**
@@ -35,7 +36,10 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $supplier = Supplier::create
+        ($request->all());
+
+        return redirect('supplier');
     }
 
     /**
@@ -55,9 +59,10 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function edit(Supplier $supplier)
+    public function edit($id)
     {
-        //
+        $supplier = Supplier::find($id);
+        return view('supplier.form', compact('supplier'));
     }
 
     /**
@@ -78,8 +83,11 @@ class SupplierController extends Controller
      * @param  \App\Models\Supplier  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Supplier $supplier)
+    public function destroy($id)
     {
-        //
+        $supplier = Supplier::find($id);
+        $supplier->delete();
+
+        return redirect('supplier');
     }
 }
