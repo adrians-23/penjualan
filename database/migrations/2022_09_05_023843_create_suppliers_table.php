@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::create('supplier', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('harga');
-            $table->integer('stock');
-            $table->string('supplier');
-            $table->string('ketegori');
+            $table->string('telepon');
+            $table->string('alamat');
             $table->timestamps();
         });
     }

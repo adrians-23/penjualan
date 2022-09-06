@@ -8,7 +8,7 @@
     <div class="card mt-5">
         <div class="card-header">
             <div class="card-title mt-3 mb-3">
-                <button class="btn btn-success btn-sm float-end" data-bs-toggle="modal" data-bs-target="#modalTambahSupplier"><i class="fa fa-plus"></i></button>
+                <a class="btn btn-success btn-sm float-end" href="{{ route('supplier.create')}}"><i class="fa fa-plus"></i></a>
                 <h5><i class="fa-solid fa-truck"></i> Data Supplier</h5>
             </div>
         </div>
@@ -20,10 +20,8 @@
                     <tr>
                         <th width="50px">ID</th>
                         <th>Nama</th>
-                        <th>Harga</th>
-                        <th width="50px">Stock</th>
-                        <th>Supplier</th>
-                        <th>Kategori</th>
+                        <th>Telepon</th>
+                        <th>Alamat</th>
                         <th width="84px">Action</th>
                     </tr>
                 </thead>
@@ -34,10 +32,8 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama }}</td>
-                        <td>{{ $item->harga }}</td>
-                        <td>{{ $item->stock }}</td>
-                        <td>{{ $item->supplier }}</td>
-                        <td>{{ $item->kategori }}</td>
+                        <td>{{ $item->telepon }}</td>
+                        <td>{{ $item->alamat }}</td>
                         <td>
                             <a href="/supplier/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                             <a href="/supplier/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>

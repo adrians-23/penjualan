@@ -25,7 +25,7 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('supplier.add');
     }
 
     /**
@@ -36,8 +36,11 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        $supplier = Supplier::create
-        ($request->all());
+        $validate = $request->validate([
+            'nama' => 'required|max:255'
+        ]);
+
+        $supplier = Supplier::create($request->all());
 
         return redirect('supplier');
     }

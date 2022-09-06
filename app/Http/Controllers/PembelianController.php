@@ -25,7 +25,7 @@ class PembelianController extends Controller
      */
     public function create()
     {
-        //
+        return view('pembelian.add');
     }
 
     /**
@@ -36,8 +36,11 @@ class PembelianController extends Controller
      */
     public function store(Request $request)
     {
-        $pembelian = Pembelian::create
-        ($request->all());
+        $validate = $request->validate([
+            'tanggal' => 'required'
+        ]);
+
+        $pembelian = Pembelian::create($request->all());
 
         return redirect('pembelian');
     }

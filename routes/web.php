@@ -49,8 +49,8 @@ Route::get('/pembeli/hapus/{id}', [PembeliController::class, 'destroy']);
 
 // Routes Pembelian
 Route::resource('/pembelian', PembelianController::class);
-Route::get('/pembelian/edit/{id}', [KategoriController::class, 'edit']);
-Route::get('/pembelian/hapus/{id}', [KategoriController::class, 'destroy']);
+Route::get('/pembelian/edit/{id}', [PembelianController::class, 'edit']);
+Route::get('/pembelian/hapus/{id}', [PembelianController::class, 'destroy']);
 // Route::get('/pembelian', function () {
 //     return view('pembelian.index');
 // });

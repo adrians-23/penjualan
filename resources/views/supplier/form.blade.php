@@ -1,22 +1,22 @@
 @extends('layout.app')
 
 @section('title')
-    Kategori
+    Supplier
 @endsection
 
 @section('content')
 <div class="card mt-3">
     <div class="card-header">
         <div class="card-title">
-            <h5>Edit Kategori</h5>
+            <h5>Edit Supplier</h5>
 
-            <form action="{{route('kategori.update', $kategori->id)}}" method="POST">
+            <form action="{{route('supplier.update', $supplier->id)}}" method="POST">
                 <div class="card-body">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" name="nama" id="nama" value="{{$kategori->nama}}" class="form-control @error('nama') is-invalid @enderror">
+                        <input type="text" name="nama" id="nama" value="{{$supplier->nama}}" class="form-control @error('nama') is-invalid @enderror">
                         @error('nama')
                             <div class="text-danger">
                                 {{ $message }}

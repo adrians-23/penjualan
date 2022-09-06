@@ -8,7 +8,7 @@
     <div class="card mt-5">
         <div class="card-header">
             <div class="card-title mt-3 mb-3">
-                <button class="btn btn-success btn-sm float-end" data-bs-toggle="modal" data-bs-target="#modalTambahBarang"><i class="fa fa-plus"></i></button>
+                <a class="btn btn-success btn-sm float-end" href="{{ route('barang.create')}}"><i class="fa fa-plus"></i></a>
                 <h5><i class="fa-solid fa-boxes"></i> Data Barang</h5>
             </div>
         </div>

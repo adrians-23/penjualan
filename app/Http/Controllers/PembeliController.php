@@ -25,7 +25,7 @@ class PembeliController extends Controller
      */
     public function create()
     {
-        //
+        return view('pembeli.add');
     }
 
     /**
@@ -36,8 +36,11 @@ class PembeliController extends Controller
      */
     public function store(Request $request)
     {
-        $pembeli = Pembeli::create
-        ($request->all());
+        $validate = $request->validate([
+            'nama' => 'required|max:255'
+        ]);
+        
+        $pembeli = Pembeli::create($request->all());
 
         return redirect('pembeli');
     }

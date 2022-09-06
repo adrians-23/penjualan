@@ -8,7 +8,7 @@
     <div class="card mt-5">
         <div class="card-header">
             <div class="card-title mt-3 mb-3">
-                <button class="btn btn-success btn-sm float-end" data-bs-toggle="modal" data-bs-target="#modalTambahPembeli"><i class="fa fa-plus"></i></button>
+                <a class="btn btn-success btn-sm float-end" href="{{ route('pembeli.create')}}"><i class="fa fa-plus"></i></a>
                 <h5><i class="fa-solid fa-person"></i> Data Pembeli</h5>
             </div>
         </div>

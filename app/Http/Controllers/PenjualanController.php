@@ -25,7 +25,7 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        //
+        return view('penjualan.add');
     }
 
     /**
@@ -36,8 +36,11 @@ class PenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        $penjualan = Penjualan::create
-        ($request->all());
+        $validate = $request->validate([
+            'id_barang' => 'required'
+        ]);
+
+        $penjualan = Penjualan::create($request->all());
 
         return redirect('penjualan');
     }

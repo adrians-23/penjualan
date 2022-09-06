@@ -14,10 +14,11 @@ class KategoriController extends Controller
      */
     public function index()
     {
+        //menampilkan view barang
         $kategori = Kategori::all();
         return view('kategori.index', compact('kategori'));
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +26,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategori.add');
     }
 
     /**
@@ -77,7 +78,15 @@ class KategoriController extends Controller
      */
     public function update(Request $request, Kategori $kategori)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|max:255'
+        ]);
+
+        $kategori->update([
+            'nama' => $request->nama
+        ]);
+
+        return redirect('kategori');
     }
 
     /**
