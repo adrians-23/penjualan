@@ -37,7 +37,10 @@ class PenjualanController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'id_barang' => 'required'
+            'id_barang' => 'required',
+            'id_pembeli' => 'required',
+            'jumlah' => 'required|numeric|min:1',
+            'harga_jual' => 'required|numeric'
         ]);
 
         $penjualan = Penjualan::create($request->all());

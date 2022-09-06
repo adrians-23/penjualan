@@ -37,7 +37,10 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'tanggal' => 'required'
+            'tanggal' => 'required|date',
+            'jumlah' => 'required|numeric|min:1',
+            'harga' => 'required|numeric',
+            'id_barang' => 'required'
         ]);
 
         $pembelian = Pembelian::create($request->all());
