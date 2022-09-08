@@ -1,3 +1,4 @@
+{{-- HANYA EDIT KATEGORI YANG BISA DIGUNAKAN --}}
 @extends('layout.app')
 
 @section('title')
@@ -25,7 +26,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <a class="btn btn-secondary" href="/kategori" role="button">Batal</a>
                     <button type="submit" class="btn btn-success">Simpan</button>
                 </div>
             </form>

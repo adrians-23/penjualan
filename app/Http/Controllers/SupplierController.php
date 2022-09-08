@@ -38,10 +38,8 @@ class SupplierController extends Controller
     {
         $validate = $request->validate([
             'nama' => 'required|max:255',
-            'harga' => 'required|numeric',
-            'stock' => 'required|numeric|min:1',
-            'supplier' => 'required',
-            'kategori' => 'required'
+            'telepon' => 'required|numeric',
+            'alamat' => 'required'
         ]);
 
         $supplier = Supplier::create($request->all());

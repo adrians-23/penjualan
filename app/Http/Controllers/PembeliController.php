@@ -39,7 +39,7 @@ class PembeliController extends Controller
         $validate = $request->validate([
             'nama' => 'required|max:255',
             'telepon' => 'required|numeric',
-            'email' => 'required|email'
+            'alamat' => 'required'
         ]);
         
         $pembeli = Pembeli::create($request->all());

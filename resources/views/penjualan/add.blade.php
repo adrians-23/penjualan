@@ -16,7 +16,7 @@
                     <div class="form-group">
                         {{-- Add ID Barang --}}
                         <label class="mb-2" for="nama">ID Barang</label>
-                        <input type="text" name="id_barang" id="id_barang" value="{{ old('id_nama')}}" class="form-control @error('id_nama') is-invalid @enderror">
+                        <input type="text" name="id_barang" id="id_barang" value="{{ old('id_barang')}}" class="form-control @error('id_barang') is-invalid @enderror">
                         @error('id_barang')
                             <div class="text-danger">
                                 {{ $message }}
