@@ -15,6 +15,7 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
+                        {{-- Edit Nama --}}
                         <label for="nama">Nama</label>
                         <input type="text" name="nama" id="nama" value="{{$pembeli->nama}}" class="form-control @error('nama') is-invalid @enderror">
                         @error('nama')
@@ -22,10 +23,29 @@
                                 {{ $message }}
                             </div>
                         @enderror
+                        
+                        {{-- Edit Telepon --}}
+                        <label for="nama">Telepon</label>
+                        <input type="text" name="telepon" id="telepon" value="{{$pembeli->telepon}}" class="form-control @error('telepon') is-invalid @enderror">
+                        @error('telepon')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
+
+                        {{-- Edit Alamat --}}
+                        <label for="nama">Alamat</label>
+                        <input type="text" name="alamat" id="alamat" value="{{$pembeli->alamat}}" class="form-control @error('alamat') is-invalid @enderror">
+                        @error('alamat')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                 </div>
+                {{-- Tombol simpan dan batal --}}
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <a class="btn btn-secondary" href="/pembeli" role="button">Batal</a>
                     <button type="submit" class="btn btn-success">Simpan</button>
                 </div>
             </form>

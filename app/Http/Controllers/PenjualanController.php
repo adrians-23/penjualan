@@ -80,7 +80,21 @@ class PenjualanController extends Controller
      */
     public function update(Request $request, Penjualan $penjualan)
     {
-        //
+        $validate = $request->validate([
+            'id_barang' => 'required',
+            'id_pembeli' => 'required',
+            'jumlah' => 'required|numeric|min:1',
+            'harga_jual' => 'required|numeric'
+        ]);
+
+        $penjualan->update([
+            'id_barang' => $request->id_barang,
+            'id_pembeli' => $request->id_pembeli,
+            'jumlah' => $request->jumlah,
+            'harga_jual' => $request->harga_jual
+        ]);
+
+        return redirect('penjualan');
     }
 
     /**

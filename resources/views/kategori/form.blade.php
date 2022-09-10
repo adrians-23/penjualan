@@ -16,6 +16,7 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
+                        {{-- Edit Nama --}}
                         <label for="nama">Nama</label>
                         <input type="text" name="nama" id="nama" value="{{$kategori->nama}}" class="form-control @error('nama') is-invalid @enderror">
                         @error('nama')
@@ -25,6 +26,7 @@
                         @enderror
                     </div>
                 </div>
+                {{-- Tombol simpan dan batal --}}
                 <div class="modal-footer">
                     <a class="btn btn-secondary" href="/kategori" role="button">Batal</a>
                     <button type="submit" class="btn btn-success">Simpan</button>

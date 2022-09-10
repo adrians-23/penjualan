@@ -79,7 +79,19 @@ class SupplierController extends Controller
      */
     public function update(Request $request, Supplier $supplier)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|max:255',
+            'telepon' => 'required|numeric',
+            'alamat' => 'required'
+        ]);
+
+        $supplier->update([
+            'nama' => $request->nama,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat
+        ]);
+
+        return redirect('supplier');
     }
 
     /**

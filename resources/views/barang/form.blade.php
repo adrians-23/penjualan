@@ -15,6 +15,7 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
+                        {{-- Edit Nama --}}
                         <label for="nama">Nama</label>
                         <input type="text" name="nama" id="nama" value="{{$barang->nama}}" class="form-control @error('nama') is-invalid @enderror">
                         @error('nama')
@@ -23,6 +24,7 @@
                             </div>
                         @enderror
 
+                        {{-- Edit Harga --}}
                         <label for="nama">Harga</label>
                         <input type="text" name="harga" id="harga" value="{{$barang->harga}}" class="form-control @error('harga') is-invalid @enderror">
                         @error('harga')
@@ -31,14 +33,16 @@
                             </div>
                         @enderror
 
+                        {{-- Edit Stock --}}
                         <label for="nama">Stock</label>
-                        <input type="text" name="stock" id="stock" value="{{$barang->stock}}" class="form-control @error('stock') is-invalid @enderror">
+                        <input type="number" name="stock" id="stock" value="{{$barang->stock}}" class="form-control @error('stock') is-invalid @enderror">
                         @error('stock')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
                         @enderror
 
+                        {{-- Edit Supplier --}}
                         <label for="nama">Supplier</label>
                         <input type="text" name="supplier_id" id="supplier_id" value="{{$barang->supplier_id}}" class="form-control @error('supplier_id') is-invalid @enderror">
                         @error('supplier_id')
@@ -47,6 +51,7 @@
                             </div>
                         @enderror
 
+                        {{-- Edit Kategori --}}
                         <label for="nama">Kategori</label>
                         <input type="text" name="kategori_id" id="kategori_id" value="{{$barang->kategori_id}}" class="form-control @error('kategori_id') is-invalid @enderror">
                         @error('kategori_id')
@@ -56,6 +61,7 @@
                         @enderror
                     </div>
                 </div>
+                {{-- Tombol simpan dan batal --}}
                 <div class="modal-footer">
                     <a class="btn btn-secondary" href="/barang" role="button">Batal</a>
                     <button type="submit" class="btn btn-success">Simpan</button>

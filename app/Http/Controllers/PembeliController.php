@@ -79,7 +79,19 @@ class PembeliController extends Controller
      */
     public function update(Request $request, Pembeli $pembeli)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|max:255',
+            'telepon' => 'required|numeric',
+            'alamat' => 'required'
+        ]);
+
+        $pembeli->update([
+            'nama' => $request->nama,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat
+        ]);
+
+        return redirect('pembeli');
     }
 
     /**

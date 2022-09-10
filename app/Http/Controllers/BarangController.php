@@ -27,8 +27,8 @@ class BarangController extends Controller
      */
     public function create()
     {
-        $kategori = Kategori::all();
-        $supplier = Supplier::all();
+        $kategori = Kategori::all(); //untuk extends data kategori
+        $supplier = Supplier::all(); //untuk extends data supplier
         return view('barang.add', compact('kategori', 'supplier'));
     }
 
@@ -87,7 +87,23 @@ class BarangController extends Controller
      */
     public function update(Request $request, Barang $barang)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|max:255',
+            'harga' => 'required|numeric',
+            'stock' => 'required|numeric|min:0',
+            'supplier_id' => 'required',
+            'kategori_id' => 'required'
+        ]);
+
+        $barang->update([
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'stock' => $request->stock,
+            'supplier_id' => $request->supplier_id,
+            'kategori_id' => $request->kategori_id
+        ]);
+
+        return redirect('barang');
     }
 
     /**

@@ -80,7 +80,21 @@ class PembelianController extends Controller
      */
     public function update(Request $request, Pembelian $pembelian)
     {
-        //
+        $validate = $request->validate([
+            'tanggal' => 'required|date',
+            'jumlah' => 'required|numeric|min:1',
+            'harga' => 'required|numeric',
+            'id_barang' => 'required'
+        ]);
+
+        $pembelian->update([
+            'tanggal' => $request->tanggal,
+            'jumlah' => $request->jumlah,
+            'harga' => $request->harga,
+            'id_barang' => $request->id_barang
+        ]);
+
+        return redirect('pembelian');
     }
 
     /**
