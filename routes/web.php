@@ -7,13 +7,15 @@ use App\Http\Controllers\{
     SupplierController,
     PembeliController,
     PembelianController,
-    PenjualanController
+    PenjualanController,
+    HomeController
 };
 
 // Routes Halaman Utama
-Route::get('/', function () {
-    return view('home');
-});
+Route::resource('/', HomeController::class);
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 // Routes Barang
 Route::resource('/barang', BarangController::class);
