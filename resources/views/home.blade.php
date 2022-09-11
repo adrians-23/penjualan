@@ -7,7 +7,7 @@
 @section('content')
     <div class="card mt-2">
         <div class="card-body mt-3">
-            <h4>Dashboard</h4>
+            <h2>Dashboard</h2>
             <hr>
         </div>
 
@@ -63,16 +63,16 @@
         </div>
     </div> --}}
 
-        <div class="row card-body m-2">
+        <div class="row card-body m-2 g-2">
             <div class="feature col col-4">
                 <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
-                    <div class="feature-icon d-inline-flex align-items-center shadow-primary text-bg-primary p-5 fs-1">
+                    <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-box"></i>
                     </div>
                     <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h4 class="mb-0 opacity-50">Barang</h4>
-                            <h5 class="mb-0">{{ $barang }}</h5>
+                        <div class="mx-2">
+                            <h4 class="opacity-75">Barang</h4>
+                            <h5>{{ $barang }}</h5>
                         </div>
                     </div>
                 </a>
@@ -80,13 +80,13 @@
 
             <div class="feature col col-4">
                 <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
-                    <div class="feature-icon d-inline-flex align-items-center shadow-primary text-bg-primary p-5 fs-1">
+                    <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-tags"></i>
                     </div>
                     <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h4 class="mb-0 opacity-50">Kategori</h4>
-                            <h5 class="mb-0">{{ $kategori }}</h5>
+                        <div class="mx-2">
+                            <h4 class="opacity-75">Kategori</h4>
+                            <h5>{{ $kategori }}</h5>
                         </div>
                     </div>
                 </a>
@@ -94,13 +94,57 @@
 
             <div class="feature-col col-4">
                 <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
-                    <div class="feature-icon d-inline-flex align-items-center shadow-primary text-bg-primary p-5 fs-1">
+                    <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-truck"></i>
                     </div>
                     <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h4 class="mb-0 opacity-50">Supplier</h4>
-                            <h5 class="mb-0">{{ $supplier }}</h5>
+                        <div class="mx-2">
+                            <h4 class="opacity-75">Supplier</h4>
+                            <h5>{{ $supplier }}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="row card-body m-2 g-2">
+            <div class="feature col col-4">
+                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                    <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
+                    <i class="fa-solid fa-person"></i>
+                    </div>
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div class="mx-2">
+                            <h4 class="opacity-75">Pembeli</h4>
+                            <h5>{{ $pembeli }}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="feature col col-4">
+                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                    <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div class="mx-2">
+                            <h4 class="opacity-75">Pembelian</h4>
+                            <h5>{{ $pembelian }}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="feature-col col-4">
+                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                    <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div class="mx-2">
+                            <h4 class="opacity-75">Penjualan</h4>
+                            <h5>{{ $penjualan }}</h5>
                         </div>
                     </div>
                 </a>
