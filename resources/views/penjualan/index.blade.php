@@ -19,10 +19,10 @@
                 <thead>
                     <tr>
                         <th width="50px">ID</th>
-                        <th width="94px">ID Barang</th>
-                        <th width="99px">ID Pembeli</th>
+                        <th>ID Barang</th>
+                        <th>ID Pembeli</th>
                         <th width="50px">Jumlah</th>
-                        <th>Harga Jual</th>
+                        <th width="250px">Harga Jual</th>
                         <th width="84px">Action</th>
                     </tr>
                 </thead>
@@ -32,8 +32,8 @@
                     @foreach ($penjualan as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->id_barang }}</td>
-                        <td>{{ $item->id_pembeli }}</td>
+                        <td>{{ $item->barang->nama }}</td>
+                        <td>{{ $item->pembeli->nama }}</td>
                         <td>{{ $item->jumlah }}</td>
                         <td>{{ $item->harga_jual }}</td>
                         <td>

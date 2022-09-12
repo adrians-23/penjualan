@@ -5,17 +5,18 @@
 @endsection
 
 @section('content')
-    <div class="card mt-2">
+<section class="section">
+    <div class="table table-hover mt-2" style="height: 650px;">
         <div class="card-body mt-3">
             <h2>Dashboard</h2>
             <hr>
         </div>
 
-    {{-- <div class="row g-3 p-1 text-center">
+    <div class="row g-3 p-1 text-center">
         <div class="col-4">
             <div class="card p-3 border text-bg-light mt-2">
                 <br><br>
-                <a class="nav-link" href="/barang"><h5>{{ $barang}} Barang</h5> <i class="fa fa-boxes"></i></a>
+                <a class="nav-link" href="/barang"><h5>{{ $barang }} Barang</h5> <i class="fa fa-boxes"></i></a>
                 <br><br>
             </div>
         </div>
@@ -23,7 +24,7 @@
         <div class="col-4">
             <div class="card p-3 border text-bg-light mt-2">
                 <br><br>
-                <a class="nav-link" href="/kategori"><h5>{{ $kategori}} Kategori</h5> <i class="fa fa-tags"></i></a>
+                <a class="nav-link" href="/kategori"><h5>{{ $kategori }} Kategori</h5> <i class="fa fa-tags"></i></a>
                 <br><br>
             </div>
         </div>
@@ -61,11 +62,13 @@
                 <br><br><br>
             </div>
         </div>
-    </div> --}}
+    </div>
 
-        <div class="row card-body m-2 g-2">
+    {{-- Tampilan Home atau Dashboard yang Baru --}}
+
+        {{-- <div class="row card-body overflow-hidden m-2">
             <div class="feature col col-4">
-                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                <a href="/barang" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
                     <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-box"></i>
                     </div>
@@ -79,7 +82,7 @@
             </div>
 
             <div class="feature col col-4">
-                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                <a href="/kategori" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
                     <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-tags"></i>
                     </div>
@@ -93,7 +96,7 @@
             </div>
 
             <div class="feature-col col-4">
-                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                <a href="/supplier" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
                     <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-truck"></i>
                     </div>
@@ -107,9 +110,9 @@
             </div>
         </div>
         
-        <div class="row card-body m-2 g-2">
+        <div class="row card-body gy-5 m-2">
             <div class="feature col col-4">
-                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                <a href="/pembeli" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
                     <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-person"></i>
                     </div>
@@ -123,7 +126,7 @@
             </div>
 
             <div class="feature col col-4">
-                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                <a href="/pembelian" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
                     <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-cart-shopping"></i>
                     </div>
@@ -137,7 +140,7 @@
             </div>
 
             <div class="feature-col col-4">
-                <a href="#" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
+                <a href="/penjualan" class="list-group-item list-group-item-action bg-gradient d-flex gap-3">
                     <div class="card feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 px-4">
                     <i class="fa-solid fa-basket-shopping"></i>
                     </div>
@@ -149,7 +152,8 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div> --}}
 
     </div>
+</section>
 @endsection

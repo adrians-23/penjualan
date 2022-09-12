@@ -19,10 +19,9 @@
                 <thead>
                     <tr>
                         <th width="50px">ID</th>
-                        <th>Tanggal</th>
                         <th width="50px">Jumlah</th>
                         <th>Harga</th>
-                        <th width="92px">ID Barang</th>
+                        <th>ID Barang</th>
                         <th width="84px">Action</th>
                     </tr>
                 </thead>
@@ -32,10 +31,9 @@
                     @foreach ($pembelian as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->tanggal }}</td>
                         <td>{{ $item->jumlah }}</td>
                         <td>{{ $item->harga }}</td>
-                        <td>{{ $item->id_barang }}</td>
+                        <td>{{ $item->barang->nama }}</td>
                         <td>
                             <a href="/pembelian/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                             <a href="/pembelian/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>

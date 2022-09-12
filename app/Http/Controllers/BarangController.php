@@ -73,8 +73,8 @@ class BarangController extends Controller
     public function edit($id)
     {
         $barang = Barang::find($id);
-        $kategori = Kategori::find($id);
-        $supplier = Supplier::find($id);
+        $kategori = Kategori::all();
+        $supplier = Supplier::all();
         return view('barang.form', compact('barang', 'kategori', 'supplier'));
     }
 

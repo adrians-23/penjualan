@@ -34,8 +34,8 @@
                         @enderror
 
                         {{-- Edit Alamat --}}
-                        <label for="nama">Alamat</label>
-                        <input type="text" name="alamat" id="alamat" value="{{$supplier->alamat}}" class="form-control @error('alamat') is-invalid @enderror">
+                        <label for="floatingTextarea">Alamat</label>
+                        <textarea class="form-control @error('alamat') is-invalid @enderror"  id="floatingTextarea" name="alamat" placeholder="Alamat">{{$supplier->alamat}}</textarea>
                         @error('alamat')
                             <div class="text-danger">
                                 {{ $message }}

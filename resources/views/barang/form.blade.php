@@ -44,21 +44,31 @@
 
                         {{-- Edit Supplier --}}
                         <label for="nama">Supplier</label>
-                        <input type="text" name="supplier_id" id="supplier_id" value="{{$barang->supplier_id}}" class="form-control @error('supplier_id') is-invalid @enderror">
+                        <select type="text" name="supplier_id" id="supplier_id" class="form-control @error('supplier_id') is-invalid @enderror">
                         @error('supplier_id')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
                         @enderror
+                            <option value="{{$barang->supplier_id}}" selected>{{$barang->supplier->nama}}</option>
+                        @foreach($supplier as $supplier)
+                            <option value="{{$supplier->id}}">{{$supplier->nama}}</option>
+                        @endforeach
+                        </select>
 
                         {{-- Edit Kategori --}}
                         <label for="nama">Kategori</label>
-                        <input type="text" name="kategori_id" id="kategori_id" value="{{$barang->kategori_id}}" class="form-control @error('kategori_id') is-invalid @enderror">
+                        <select type="text" name="kategori_id" id="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror">
                         @error('kategori_id')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
                         @enderror
+                            <option value="{{$barang->kategori_id}}" selected>{{$barang->kategori->nama}}</option>
+                        @foreach($kategori as $kategori)
+                            <option value="{{$kategori->id}}">{{$kategori->nama}}</option>
+                        @endforeach
+                        </select>
                     </div>
                 </div>
                 {{-- Tombol simpan dan batal --}}

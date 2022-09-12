@@ -14,17 +14,8 @@
                 <div class="card-body">
                     @csrf
                     <div class="form-group">
-                        {{-- Add Tanggal --}}
-                        <label class="mb-2" for="nama">Tanggal</label>
-                        <input type="date" name="tanggal" id="tanggal" value="{{ old('tanggal')}}" class="form-control @error('tanggal') is-invalid @enderror">
-                        @error('tanggal')
-                            <div class="text-danger">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                        
                         {{-- Add Jumlah --}}
-                        <div class="mt-4 mb-4">
+                        <div class="mb-4">
                             <label class="mb-2" for="nama">Jumlah</label>
                             <input type="number" name="jumlah" id="jumlah" value="{{ old('jumlah')}}" class="form-control @error('jumlah') is-invalid @enderror">
                             @error('jumlah')
@@ -47,9 +38,22 @@
 
                         {{-- Add ID Barang --}}
                         <div class="mt-4 mb-4">
-                            <label class="mb-2" for="nama">ID Barang</label>
+                            {{-- <label class="mb-2" for="nama">ID Barang</label>
                             <input type="text" name="id_barang" id="id_barang" value="{{ old('id_barang')}}" class="form-control @error('id_barang') is-invalid @enderror">
                             @error('id_barang')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror --}}
+
+                            <label class="mb-2" for="nama">ID Barang</label>
+                            <select name="barang_id" id="barang_id" value="{{ old('barang_id')}}" class="form-control @error('barang_id') is-invalid @enderror">
+                                <option selected>Pilih...</option>
+                                @foreach($barang as $b)
+                                    <option value="{{$b->id}}">{{$b->nama}}</option>
+                                @endforeach
+                            </select>
+                            @error('barang_id')
                                 <div class="text-danger">
                                     {{ $message }}
                                 </div>

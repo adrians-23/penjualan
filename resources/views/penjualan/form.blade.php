@@ -17,8 +17,8 @@
                     <div class="form-group">
                         {{-- Edit ID Barang --}}
                         <label for="nama">ID Barang</label>
-                        <input type="text" name="id_barang" id="id_barang" value="{{$penjualan->id_barang}}" class="form-control @error('id_barang') is-invalid @enderror">
-                        @error('id_barang')
+                        <input type="text" name="barang_id" id="barang_id" value="{{$penjualan->barang->nama}}" class="form-control @error('barang_id') is-invalid @enderror">
+                        @error('barang_id')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
@@ -26,8 +26,8 @@
 
                         {{-- Edit ID Pembeli --}}
                         <label for="nama">ID Pembeli</label>
-                        <input type="text" name="id_pembeli" id="id_pembeli" value="{{$penjualan->id_pembeli}}" class="form-control @error('id_pembeli') is-invalid @enderror">
-                        @error('id_pembeli')
+                        <input type="text" name="pembeli_id" id="pembeli_id" value="{{$penjualan->pembeli->nama}}" class="form-control @error('pembeli_id') is-invalid @enderror">
+                        @error('pembeli_id')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>

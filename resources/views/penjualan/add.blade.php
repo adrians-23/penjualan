@@ -15,19 +15,45 @@
                     @csrf
                     <div class="form-group">
                         {{-- Add ID Barang --}}
-                        <label class="mb-2" for="nama">ID Barang</label>
+                        {{-- <label class="mb-2" for="nama">ID Barang</label>
                         <input type="text" name="id_barang" id="id_barang" value="{{ old('id_barang')}}" class="form-control @error('id_barang') is-invalid @enderror">
                         @error('id_barang')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
-                        @enderror
+                        @enderror --}}
+
+                        <label class="mb-2" for="nama">ID Barang</label>
+                            <select name="barang_id" id="barang_id" value="{{ old('barang_id')}}" class="form-control @error('barang_id') is-invalid @enderror">
+                                <option selected>Pilih...</option>
+                                @foreach($barang as $b)
+                                    <option value="{{$b->id}}">{{$b->nama}}</option>
+                                @endforeach
+                            </select>
+                            @error('barang_id')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         
                         {{-- Add ID Pembeli --}}
                         <div class="mt-4 mb-4">
-                            <label class="mb-2" for="nama">ID Pembeli</label>
+                            {{-- <label class="mb-2" for="nama">ID Pembeli</label>
                             <input type="text" name="id_pembeli" id="id_pembeli" value="{{ old('id_pembeli')}}" class="form-control @error('id_pembeli') is-invalid @enderror">
                             @error('id_pembeli')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror --}}
+
+                            <label class="mb-2" for="nama">ID Pembeli</label>
+                            <select name="pembeli_id" id="pembeli_id" value="{{ old('pembeli_id')}}" class="form-control @error('pembeli_id') is-invalid @enderror">
+                                <option selected>Pilih...</option>
+                                @foreach($pembeli as $p)
+                                    <option value="{{$p->id}}">{{$p->nama}}</option>
+                                @endforeach
+                            </select>
+                            @error('pembeli_id')
                                 <div class="text-danger">
                                     {{ $message }}
                                 </div>

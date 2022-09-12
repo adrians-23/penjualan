@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<section class="section">
     <div class="card mt-5">
         <div class="card-header">
             <div class="card-title mt-3 mb-3">
@@ -36,8 +37,8 @@
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->harga }}</td>
                         <td>{{ $item->stock }}</td>
-                        <td>{{ $item->supplier_id }}</td>
-                        <td>{{ $item->kategori_id }}</td>
+                        <td>{{ $item->supplier->nama }}</td>
+                        <td>{{ $item->kategori->nama}}</td>
                         <td>
                             <a href="/barang/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                             <a href="/barang/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
@@ -73,4 +74,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection

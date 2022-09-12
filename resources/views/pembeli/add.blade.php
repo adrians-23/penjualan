@@ -36,8 +36,9 @@
 
                         {{-- Add Alamat --}}
                         <div class="mt-4 mb-4">
-                            <label class="mb-2" for="nama">Alamat</label>
-                            <input type="text" name="alamat" id="alamat" value="{{ old('alamat')}}" class="form-control @error('alamat') is-invalid @enderror">
+                            <label class="mb-2" for="floatingTextarea">Alamat</label>
+                            {{-- <input type="text" name="alamat" id="alamat" value="{{ old('alamat')}}" class="form-control @error('alamat') is-invalid @enderror"> --}}
+                            <textarea class="form-control @error('alamat') is-invalid @enderror"  id="floatingTextarea" name="alamat" placeholder="Alamat"></textarea>
                             @error('alamat')
                                 <div class="text-danger">
                                     {{ $message }}

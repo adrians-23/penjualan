@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pembelian;
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class PembelianController extends Controller
@@ -15,6 +16,7 @@ class PembelianController extends Controller
     public function index()
     {
         $pembelian = Pembelian::all();
+        $barang = Barang::all();
         return view('pembelian.index', compact('pembelian'));
     }
 
@@ -25,7 +27,9 @@ class PembelianController extends Controller
      */
     public function create()
     {
-        return view('pembelian.add');
+        $barang = Barang::all(); //untuk extends data barang
+
+        return view('pembelian.add', compact('barang'));
     }
 
     /**
@@ -37,10 +41,9 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'tanggal' => 'required|date',
             'jumlah' => 'required|numeric|min:1',
             'harga' => 'required|numeric',
-            'id_barang' => 'required'
+            'barang_id' => 'required'
         ]);
 
         $pembelian = Pembelian::create($request->all());
@@ -68,7 +71,8 @@ class PembelianController extends Controller
     public function edit($id)
     {
         $pembelian = Pembelian::find($id);
-        return view('pembelian.form', compact('pembelian'));
+        $barang = Barang::all();
+        return view('pembelian.form', compact('pembelian', 'barang'));
     }
 
     /**
@@ -81,17 +85,15 @@ class PembelianController extends Controller
     public function update(Request $request, Pembelian $pembelian)
     {
         $validate = $request->validate([
-            'tanggal' => 'required|date',
             'jumlah' => 'required|numeric|min:1',
             'harga' => 'required|numeric',
-            'id_barang' => 'required'
+            'barang_id' => 'required'
         ]);
 
         $pembelian->update([
-            'tanggal' => $request->tanggal,
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
-            'id_barang' => $request->id_barang
+            'barang_id' => $request->barang_id
         ]);
 
         return redirect('pembelian');

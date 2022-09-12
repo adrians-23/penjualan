@@ -15,15 +15,6 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        {{-- Edit Tanggal --}}
-                        <label for="nama">Tanggal</label>
-                        <input type="date" name="tanggal" id="tanggal" value="{{$pembelian->tanggal}}" class="form-control @error('tanggal') is-invalid @enderror">
-                        @error('tanggal')
-                            <div class="text-danger">
-                                {{ $message }}
-                            </div>
-                        @enderror
-
                         {{-- Edit Jumlah --}}
                         <label for="nama">Jumlah</label>
                         <input type="number" name="jumlah" id="jumlah" value="{{$pembelian->jumlah}}" class="form-control @error('jumlah') is-invalid @enderror">
@@ -43,13 +34,26 @@
                         @enderror
 
                         {{-- Edit ID Barang --}}
+                        {{-- <label for="nama">ID Barang</label>
+                        <input type="text" name="barang_id" id="barang_id" value="{{$pembelian->barang_id}}" class="form-control @error('barang_id') is-invalid @enderror">
+                        @error('barang_id')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror --}}
+
                         <label for="nama">ID Barang</label>
-                        <input type="text" name="id_barang" id="id_barang" value="{{$pembelian->id_barang}}" class="form-control @error('id_barang') is-invalid @enderror">
-                        @error('id_barang')
+                        <select type="text" name="barang_id" id="barang_id" class="form-control @error('barang_id') is-invalid @enderror">
+                        @error('barang_id')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
                         @enderror
+                            <option value="{{$pembelian->barang_id}}" selected>{{$pembelian->barang->nama}}</option>
+                        @foreach($barang as $barang)
+                            <option value="{{$barang->id}}">{{$barang->nama}}</option>
+                        @endforeach
+                        </select>
                     </div>
                 </div>
                 {{-- Tombol simpan dan batal --}}

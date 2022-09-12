@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penjualan;
+use App\Models\Barang;
+use App\Models\Pembeli;
 use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
@@ -25,7 +27,9 @@ class PenjualanController extends Controller
      */
     public function create()
     {
-        return view('penjualan.add');
+        $barang = Barang::all(); //untuk extends data kategori
+        $pembeli = Pembeli::all(); //untuk extends data supplier
+        return view('penjualan.add', compact('barang', 'pembeli'));
     }
 
     /**
@@ -37,8 +41,8 @@ class PenjualanController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'id_barang' => 'required',
-            'id_pembeli' => 'required',
+            'barang_id' => 'required',
+            'pembeli_id' => 'required',
             'jumlah' => 'required|numeric|min:1',
             'harga_jual' => 'required|numeric'
         ]);
@@ -81,15 +85,15 @@ class PenjualanController extends Controller
     public function update(Request $request, Penjualan $penjualan)
     {
         $validate = $request->validate([
-            'id_barang' => 'required',
-            'id_pembeli' => 'required',
+            'barang_id' => 'required',
+            'pembeli_id' => 'required',
             'jumlah' => 'required|numeric|min:1',
             'harga_jual' => 'required|numeric'
         ]);
 
         $penjualan->update([
-            'id_barang' => $request->id_barang,
-            'id_pembeli' => $request->id_pembeli,
+            'barang_id' => $request->barang_id,
+            'pembeli_id' => $request->pembeli_id,
             'jumlah' => $request->jumlah,
             'harga_jual' => $request->harga_jual
         ]);

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Barang;
 
 class Pembelian extends Model
 {
@@ -13,4 +14,8 @@ class Pembelian extends Model
 
     //ini jika kita menggunakan Eloquent ORM
     protected $guarded = [];
+
+    public function Barang(){
+        return $this->belongsTo(Barang::class);
+    }
 }

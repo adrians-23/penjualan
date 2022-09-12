@@ -1,13 +1,23 @@
 {{-- navbar --}}
-
-<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
-    <div class="container-fluid">
+<nav class="navbar-bg"></nav>
+<nav class="navbar navbar-expand-lg bg-light" style="height: 70px; border-radius: 0px 0px 10px 10px;">
+    <div class="form-inline mr-auto container-fluid">
         <a class="navbar-brand" href="/"><i class="fa-solid fa-shop"></i> TokoKu</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        {{-- <ul class="navbar-nav navbar-right">
+            <li class="dropdown"><a href="#"class="nav-link nav-link-lg">
+                <figure class="avatar mr-2 avatar-sm">
+                    <i class="fa fa-user"></i>
+                </figure>
+            </li>
+        </ul> --}}
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                 {{-- Menu Database --}}
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
