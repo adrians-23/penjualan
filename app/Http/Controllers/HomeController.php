@@ -9,7 +9,6 @@ use App\Models\Pembeli;
 use App\Models\Pembelian;
 use App\Models\Penjualan;
 use Illuminate\Http\Request;
-use DB;
 
 class HomeController extends Controller
 {
