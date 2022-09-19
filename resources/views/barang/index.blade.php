@@ -35,7 +35,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama }}</td>
-                        <td>Rp. {{ $item->harga }}</td>
+                        <td>Rp {{ format_uang($item->harga) }}</td>
                         <td>{{ $item->stock }}</td>
                         <td>{{ ! empty($item->supplier->nama) ?  $item->supplier->nama : '' }}</td>
                         <td>{{ ! empty($item->kategori->nama) ?  $item->kategori->nama : '' }}</td>

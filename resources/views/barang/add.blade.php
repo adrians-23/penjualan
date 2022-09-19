@@ -34,7 +34,7 @@
                                     <b>Rp</b>
                                 </div>
                             </div>
-                            <input type="text" name="harga" id="harga" value="{{ old('harga')}}" class="form-control @error('harga') is-invalid @enderror">
+                            <input type="text" name="harga" id="harga" value="{{ old('harga')}}" class="form-control currency @error('harga') is-invalid @enderror">
                             @error('harga')
                                 <div class="text-danger">
                                     {{ $message }}

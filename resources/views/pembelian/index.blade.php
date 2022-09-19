@@ -32,7 +32,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->jumlah }}</td>
-                        <td>Rp. {{ $item->harga }}</td>
+                        <td>Rp {{ format_uang($item->harga) }}</td>
                         <td>{{ ! empty($item->barang->nama) ?  $item->barang->nama : '' }}</td>
                         <td>
                             <a href="/pembelian/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
