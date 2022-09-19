@@ -14,18 +14,26 @@
                 <div class="card-body">
                     @csrf
                     <div class="form-group">
+
                         {{-- Add Nama --}}
-                        <label class="mb-2" for="nama">Nama</label>
-                        <input type="text" name="nama" id="nama" value="{{ old('nama')}}" class="form-control @error('nama') is-invalid @enderror">
-                        @error('nama')
-                            <div class="text-danger">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                        <div class="mt-4 mb-4">
+                            <label class="mb-2" for="nama">Nama</label>
+                            <input type="text" name="nama" id="nama" value="{{ old('nama')}}" class="form-control @error('nama') is-invalid @enderror">
+                            @error('nama')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                         
                         {{-- Add Harga --}}
-                        <div class="mt-4 mb-4">
-                            <label class="mb-2" for="nama">Harga</label>
+                        <label class="mb-2" for="nama">Harga</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <b>Rp</b>
+                                </div>
+                            </div>
                             <input type="text" name="harga" id="harga" value="{{ old('harga')}}" class="form-control @error('harga') is-invalid @enderror">
                             @error('harga')
                                 <div class="text-danger">
@@ -76,13 +84,16 @@
                                 </div>
                             @enderror
                         </div>
+
                     </div>
                 </div>
+
                 {{-- Tombol simpan dan batal --}}
                 <div class="modal-footer">
                     <a class="btn btn-secondary" href="/barang" role="button">Batal</a>
                     <button type="submit" class="btn btn-success">Simpan</button>
                 </div>
+                
             </form>
         </div>
     </div>

@@ -35,10 +35,10 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama }}</td>
-                        <td>{{ $item->harga }}</td>
+                        <td>Rp. {{ $item->harga }}</td>
                         <td>{{ $item->stock }}</td>
-                        <td>{{ $item->supplier->nama }}</td>
-                        <td>{{ $item->kategori->nama}}</td>
+                        <td>{{ ! empty($item->supplier->nama) ?  $item->supplier->nama : '' }}</td>
+                        <td>{{ ! empty($item->kategori->nama) ?  $item->kategori->nama : '' }}</td>
                         <td>
                             <a href="/barang/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                             <a href="/barang/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>

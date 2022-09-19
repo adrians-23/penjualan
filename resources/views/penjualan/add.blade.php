@@ -14,15 +14,9 @@
                 <div class="card-body">
                     @csrf
                     <div class="form-group">
-                        {{-- Add ID Barang --}}
-                        {{-- <label class="mb-2" for="nama">ID Barang</label>
-                        <input type="text" name="id_barang" id="id_barang" value="{{ old('id_barang')}}" class="form-control @error('id_barang') is-invalid @enderror">
-                        @error('id_barang')
-                            <div class="text-danger">
-                                {{ $message }}
-                            </div>
-                        @enderror --}}
 
+                        {{-- Add ID Barang --}}
+                        <div class="mt-4 mb-4">
                         <label class="mb-2" for="nama">ID Barang</label>
                             <select name="barang_id" id="barang_id" value="{{ old('barang_id')}}" class="form-control @error('barang_id') is-invalid @enderror">
                                 <option selected>Pilih...</option>
@@ -35,17 +29,10 @@
                                     {{ $message }}
                                 </div>
                             @enderror
+                        </div>
                         
                         {{-- Add ID Pembeli --}}
                         <div class="mt-4 mb-4">
-                            {{-- <label class="mb-2" for="nama">ID Pembeli</label>
-                            <input type="text" name="id_pembeli" id="id_pembeli" value="{{ old('id_pembeli')}}" class="form-control @error('id_pembeli') is-invalid @enderror">
-                            @error('id_pembeli')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror --}}
-
                             <label class="mb-2" for="nama">ID Pembeli</label>
                             <select name="pembeli_id" id="pembeli_id" value="{{ old('pembeli_id')}}" class="form-control @error('pembeli_id') is-invalid @enderror">
                                 <option selected>Pilih...</option>
@@ -72,8 +59,13 @@
                         </div>
                         
                         {{-- Add Harga Jual --}}
-                        <div class="mt-4 mb-4">
-                            <label class="mb-2" for="nama">Harga Jual</label>
+                        <label class="mb-2" for="nama">Harga Jual</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <b>Rp</b>
+                                </div>
+                            </div>
                             <input type="text" name="harga_jual" id="harga_jual" value="{{ old('harga_jual')}}" class="form-control @error('harga_jual') is-invalid @enderror">
                             @error('harga_jual')
                                 <div class="text-danger">
@@ -81,13 +73,16 @@
                                 </div>
                             @enderror
                         </div>
+
                     </div>
                 </div>
+
                 {{-- Tombol simpan dan batal --}}
                 <div class="modal-footer">
                     <a class="btn btn-secondary" href="/penjualan" role="button">Batal</a>
                     <button type="submit" class="btn btn-success">Simpan</button>
                 </div>
+                
             </form>
         </div>
     </div>

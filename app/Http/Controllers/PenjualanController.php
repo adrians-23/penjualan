@@ -72,7 +72,9 @@ class PenjualanController extends Controller
     public function edit($id)
     {
         $penjualan = Penjualan::find($id);
-        return view('penjualan.form', compact('penjualan'));
+        $barang = Barang::all();
+        $pembeli = Pembeli::all();
+        return view('penjualan.form', compact('penjualan', 'pembeli', 'barang'));
     }
 
     /**

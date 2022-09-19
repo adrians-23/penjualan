@@ -32,10 +32,10 @@
                     @foreach ($penjualan as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->barang->nama }}</td>
-                        <td>{{ $item->pembeli->nama }}</td>
+                        <td>{{ ! empty($item->barang->nama) ?  $item->barang->nama : '' }}</td>
+                        <td>{{ ! empty($item->pembeli->nama) ?  $item->pembeli->nama : '' }}</td>
                         <td>{{ $item->jumlah }}</td>
-                        <td>{{ $item->harga_jual }}</td>
+                        <td>Rp. {{ $item->harga_jual }}</td>
                         <td>
                             <a href="/penjualan/edit/{{$item->id}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                             <a href="/penjualan/hapus/{{$item->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
