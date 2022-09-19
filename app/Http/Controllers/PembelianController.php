@@ -46,7 +46,20 @@ class PembelianController extends Controller
             'barang_id' => 'required'
         ]);
 
-        $pembelian = Pembelian::create($request->all());
+        $pembelian = Pembelian::create([
+            'barang_id' => $request->barang_id,
+            'jumlah' => $request->jumlah,
+            'harga' => $request->harga
+        ]);
+
+        $barang_id = $request->barang_id;
+        $barang = Barang::find($barang_id);
+        $barang->stock += $request->jumlah;
+        $barang->update();
+
+        $pembelian->save();
+
+        // $pembelian = Pembelian::create($request->all());
 
         return redirect('pembelian');
     }

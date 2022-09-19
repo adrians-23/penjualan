@@ -6,7 +6,7 @@
 
 @section('content')
 <section class="section">
-    <div class="table table-hover mt-2" style="height: 650px;">
+    <div class="table table-hover mt-2" style="height: 450px;">
         <div class="card-body mt-3">
             <h2>Dashboard</h2>
             <hr>

@@ -47,7 +47,22 @@ class PenjualanController extends Controller
             'harga_jual' => 'required|numeric'
         ]);
 
-        $penjualan = Penjualan::create($request->all());
+        // mengurangi stock barang
+        $penjualan = Penjualan::create([
+            'barang_id' => $request->barang_id,
+            'pembeli_id' => $request->pembeli_id,
+            'jumlah' => $request->jumlah,
+            'harga_jual' => $request->harga_jual
+        ]);
+
+        $barang_id = $request->barang_id;
+        $barang = Barang::find($barang_id);
+        $barang->stock -= $request->jumlah;
+        $barang->update();
+
+        $penjualan->save();
+
+        // $penjualan = Penjualan::create($request->all());
 
         return redirect('penjualan');
     }
